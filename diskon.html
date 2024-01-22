@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<title>TOKO FRANK</title>
+		<script>
+		function total() {
+			var hargabarang = eval(form.hargabarang.value);
+			var jumlahbarang = eval(form.jumlahbarang.value);
+			var totalawal = hargabarang * jumlahbarang;
+
+			if (totalawal < 250000) {
+				var jumlah = hargabarang * jumlahbarang;
+				var totalakhir = jumlah;
+				form.discount.value = "0";
+				form.totalawal.value = jumlah;
+				form.totalakhir.value = totalakhir;
+			} else if (totalawal > 250000 && totalawal < 750000) {
+				var discount = 5;
+				var jumlah = hargabarang * jumlahbarang;
+				var totalakhir = jumlah - (jumlah * (discount / 100));
+				form.discount.value = discount;
+				form.totalawal.value = jumlah;
+				form.totalakhir.value = totalakhir;
+			} else if (totalawal >= 750000) { 
+				var discount = 10;
+				var jumlah = hargabarang * jumlahbarang;
+				var totalakhir = jumlah - (jumlah * (discount / 100));
+				form.discount.value = discount;
+				form.totalawal.value = jumlah;
+				form.totalakhir.value = totalakhir;
+			}
+		}
+		</script>
+	</head>
+	
+	<body>
+		<form name="form">
+		<label>Nama Barang: </label>
+		<input name="namabarang" type="text" size="30"><br>
+		<label>Harga Barang: Rp.</label>
+		<input name="hargabarang" type="text" size="10"><br>
+		<label>Jumlah Barang: </label>
+		<input name="jumlahbarang" type="text" size="3"><br>
+
+		<br>
+		<br>
+		<input type=button name=submit onclick="total()" value="Total">
+		<br>
+		<label>Total Awal: Rp.</label>
+		<input type="text" value="" name="totalawal" size="10"><br> 
+		<label>Discount: </label>
+		<input name="discount" type="text" size="3"><label>%</label><br>
+		<label>Total Akhir:  Rp.</label>
+		<input type="text" value="" name="totalakhir" size="10">
+		</form>
+	</body>
+</html>

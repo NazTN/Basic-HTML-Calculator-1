@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>TOKO FRANK</title>
+		<script>
+		function total()
+		{
+			hargabarang = eval(form.hargabarang.value);
+			jumlahbarang = eval(form.jumlahbarang.value);
+			discount = eval(form.discount.value);
+			
+			totalawal = hargabarang * jumlahbarang;
+			diskon = totalawal-(totalawal*(discount/100));
+			
+			form.totalawal.value = totalawal;
+			form.totalakhir.value = diskon;
+		}
+		
+		</script>
+	</head>
+	
+	<body>
+		<form name="form">
+		<label>Nama Barang: </label>
+		<input name="namabarang" type="text" size="30"><br>
+		<label>Harga Barang: Rp.</label>
+		<input name="hargabarang" type="text" size="10"><br>
+		<label>Jumlah Barang: </label>
+		<input name="jumlahbarang" type="text" size="3"><br>
+		<label>Discount: </label>
+		<input name="discount" type="text" size="3"><label>%</label><br>
+		<br>
+		<br>
+		<input type=button name=submit onclick="total()" value="Total">
+		<br>
+		<label>Total Awal: Rp.</label>
+		<input type="text" value="" name="totalawal" size="10"><br> 
+		<label>Total Akhir:  Rp.</label>
+		<input type="text" value="" name="totalakhir" size="10">
+		</form>
+	</body>
+</html>
